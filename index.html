@@ -16,15 +16,15 @@
   font-size:13px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html,body{width:100%;height:100%;margin:0;padding:0}
+html,body{width:100%;height:100%;margin:0;padding:0;overflow:hidden}
 body{background:var(--bg);font-family:'DM Sans',sans-serif;color:var(--t1);min-height:100%;overflow-x:hidden}
 body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,240,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,240,255,.025) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;z-index:0}
 
 /* ── LAYOUT ── */
-.wrap{position:relative;z-index:1;padding:14px;width:100%}
+.wrap{position:relative;z-index:1;padding:10px;width:100%;height:100vh;overflow-y:auto;overflow-x:hidden}
 
 /* ── HEADER ── */
-header{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:var(--bg1);border:1px solid var(--b);border-radius:10px;margin-bottom:12px;position:relative;overflow:hidden}
+header{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:var(--bg1);border:1px solid var(--b);border-radius:10px;margin-bottom:8px;position:relative;overflow:hidden}
 header::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--cyan),var(--green),var(--pink),var(--amber))}
 .h-brand{display:flex;flex-direction:column;gap:2px}
 .h-title{font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:700;letter-spacing:2px;color:var(--cyan);text-shadow:0 0 20px rgba(0,240,255,.4)}
@@ -39,7 +39,7 @@ header::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;backg
 .live-t{font-size:10px;color:var(--green);letter-spacing:2px;font-family:'JetBrains Mono',monospace}
 
 /* ── FILTER BAR ── */
-.filterbar{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--bg1);border:1px solid var(--b);border-radius:10px;margin-bottom:12px;flex-wrap:wrap}
+.filterbar{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--bg1);border:1px solid var(--b);border-radius:10px;margin-bottom:8px;flex-wrap:wrap}
 .fb-label{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--t3);white-space:nowrap;margin-right:4px}
 .fb-sep{width:1px;height:28px;background:var(--b);margin:0 6px}
 input[type=date]{background:var(--bg2);border:1px solid var(--b);color:var(--t2);padding:5px 10px;border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:11px;outline:none;cursor:pointer;transition:.2s}
@@ -54,7 +54,7 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.5);cursor:poi
 .filter-active-pill button{background:none;border:none;color:var(--cyan);cursor:pointer;font-size:12px;line-height:1;padding:0 2px}
 
 /* ── KPI ROW ── */
-.kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:12px}
+.kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:8px}
 .kpi{background:var(--bg1);border:1px solid var(--b);border-radius:10px;padding:14px 16px;position:relative;overflow:hidden;cursor:default;transition:transform .2s,border-color .2s}
 .kpi:hover{transform:translateY(-2px)}
 .kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:10px 10px 0 0}
@@ -78,9 +78,9 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.5);cursor:poi
 .kpi-ghost{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-family:'Rajdhani',sans-serif;font-size:28px;font-weight:700;opacity:.05;letter-spacing:-1px}
 
 /* ── CARD ── */
-.card{background:var(--bg1);border:1px solid var(--b);border-radius:10px;padding:16px;position:relative;overflow:hidden;transition:border-color .3s}
+.card{background:var(--bg1);border:1px solid var(--b);border-radius:10px;padding:10px 14px;position:relative;overflow:hidden;transition:border-color .3s}
 .card.highlighted{border-color:var(--cyan);box-shadow:0 0 20px rgba(0,240,255,.08)}
-.card-hd{font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--t2);margin-bottom:12px;display:flex;align-items:center;gap:7px;justify-content:space-between}
+.card-hd{font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--t2);margin-bottom:8px;display:flex;align-items:center;gap:7px;justify-content:space-between}
 .card-hd-left{display:flex;align-items:center;gap:7px}
 .cdot{width:5px;height:5px;border-radius:50%}
 .dc{background:var(--cyan);box-shadow:0 0 6px var(--cyan)}
@@ -91,9 +91,9 @@ input[type=date]::-webkit-calendar-picker-indicator{filter:invert(.5);cursor:poi
 .card-badge{font-size:9px;padding:2px 8px;border-radius:10px;background:rgba(0,240,255,.1);border:1px solid rgba(0,240,255,.2);color:var(--cyan);font-family:'JetBrains Mono',monospace;cursor:default}
 
 /* ── GRIDS ── */
-.g3{display:grid;grid-template-columns:1.4fr 1.1fr 1fr;gap:10px;margin-bottom:10px}
-.g3b{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
-.g2{display:grid;grid-template-columns:1.1fr 1fr;gap:10px;margin-bottom:10px}
+.g3{display:grid;grid-template-columns:1.4fr 1.1fr 1fr;gap:10px;margin-bottom:8px}
+.g3b{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:8px}
+.g2{display:grid;grid-template-columns:1.1fr 1fr;gap:10px;margin-bottom:8px}
 
 /* ── OPE BARS ── */
 .ope-list{display:flex;flex-direction:column;gap:7px}
@@ -233,12 +233,12 @@ footer{text-align:center;font-size:9px;color:var(--t3);padding:14px;letter-spaci
   </div>
   <div class="card">
     <div class="card-hd"><div class="card-hd-left"><span class="cdot dg"></span>OPE Diário</div><span class="card-badge" id="badge-trend">Período selecionado</span></div>
-    <div style="position:relative;height:210px;width:100%"><canvas id="chart-daily"></canvas></div>
+    <div style="position:relative;height:170px;width:100%"><canvas id="chart-daily"></canvas></div>
   </div>
   <div class="card">
     <div class="card-hd"><div class="card-hd-left"><span class="cdot dp"></span>Tipo de Perda</div></div>
     <div class="donut-wrap">
-      <div style="position:relative;height:130px;width:100%"><canvas id="chart-donut"></canvas></div>
+      <div style="position:relative;height:115px;width:100%"><canvas id="chart-donut"></canvas></div>
       <div class="d-legend" id="donut-legend"></div>
     </div>
   </div>
@@ -248,7 +248,7 @@ footer{text-align:center;font-size:9px;color:var(--t3);padding:14px;letter-spaci
 <div class="g3b">
   <div class="card">
     <div class="card-hd"><div class="card-hd-left"><span class="cdot da"></span>Perdas por Causa (min)</div><span class="card-badge">Clique para filtrar</span></div>
-    <div style="position:relative;height:200px;width:100%"><canvas id="chart-loss-type"></canvas></div>
+    <div style="position:relative;height:175px;width:100%"><canvas id="chart-loss-type"></canvas></div>
   </div>
   <div class="card">
     <div class="card-hd"><div class="card-hd-left"><span class="cdot dc"></span>OPE por Turno</div></div>
@@ -264,7 +264,7 @@ footer{text-align:center;font-size:9px;color:var(--t3);padding:14px;letter-spaci
 <div class="g2">
   <div class="card">
     <div class="card-hd"><div class="card-hd-left"><span class="cdot dp"></span>Perdas por Linha (min)</div><span class="card-badge">Clique para filtrar</span></div>
-    <div style="position:relative;height:190px;width:100%"><canvas id="chart-loss-line"></canvas></div>
+    <div style="position:relative;height:170px;width:100%"><canvas id="chart-loss-line"></canvas></div>
   </div>
   <div class="card">
     <div class="card-hd"><div class="card-hd-left"><span class="cdot da"></span>Ranking de Paradas</div></div>
@@ -977,28 +977,41 @@ async function init(){
 window.addEventListener('DOMContentLoaded', init);
 
 // ── AUTO-SCALE PARA POWER BI ──────────────────────────
-// O HTML Content visual tem largura variável — escala o conteúdo proporcionalmente
+// Escala o dashboard inteiro para caber exatamente no visual do BI
+const DASH_W = 1440; // largura de design base
+const DASH_H = 900;  // altura de design base
+
 function autoScale() {
-  const BASE_WIDTH = 1400;
+  const vw = window.innerWidth  || document.documentElement.clientWidth  || 1440;
+  const vh = window.innerHeight || document.documentElement.clientHeight || 900;
+  const scaleX = vw / DASH_W;
+  const scaleY = vh / DASH_H;
+  const scale  = Math.min(scaleX, scaleY); // mantém proporção
+
   const wrap = document.querySelector('.wrap');
   if (!wrap) return;
-  const available = window.innerWidth || document.documentElement.clientWidth;
-  if (available < BASE_WIDTH) {
-    const scale = available / BASE_WIDTH;
-    wrap.style.transform = `scale(${scale})`;
-    wrap.style.transformOrigin = 'top left';
-    wrap.style.width = BASE_WIDTH + 'px';
-    document.body.style.height = Math.ceil(wrap.offsetHeight * scale) + 'px';
-    document.body.style.overflowX = 'hidden';
-  } else {
-    wrap.style.transform = '';
-    wrap.style.width = '100%';
-  }
+
+  // Remove scroll do wrap — tudo cabe na tela via scale
+  wrap.style.overflow   = 'visible';
+  wrap.style.height     = DASH_H + 'px';
+  wrap.style.width      = DASH_W + 'px';
+  wrap.style.transform  = `scale(${scale})`;
+  wrap.style.transformOrigin = 'top left';
+
+  // Ajusta body para não criar scrollbar
+  document.body.style.width    = vw + 'px';
+  document.body.style.height   = vh + 'px';
+  document.body.style.overflow = 'hidden';
 }
-window.addEventListener('resize', autoScale);
+
+window.addEventListener('resize', () => { autoScale(); });
+
 // Roda após render inicial
 const _origInit = init;
-init = async function(){ await _origInit(); setTimeout(autoScale, 300); };
+init = async function(){
+  await _origInit();
+  setTimeout(autoScale, 200);
+};
 </script>
 </body>
 </html>
